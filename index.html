@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jash Patel - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .skill-bar {
+            transition: width 1s ease-in-out;
+        }
+
+        .project-card {
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        #back-to-top {
+            display: none;
+            transition: opacity 0.3s;
+        }
+
+        .theme-toggle {
+            transition: all 0.3s ease;
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="dark:bg-gray-900 dark:text-white transition-colors duration-300">
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white dark:bg-gray-900 shadow-lg z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-blue-600">JP</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-blue-600 transition">Home</a>
+                    <a href="#about" class="hover:text-blue-600 transition">About</a>
+                    <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+                    <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+                    <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+                </div>
+                <button class="theme-toggle p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                    <i class="bi bi-moon-stars dark:bi-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative">
+        <div id="particles-js" class="particles-js"></div>
+        <div class="container mx-auto px-6 py-24 relative">
+            <div class="animate-slide-up">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4">Jash Patel</h1>
+                <h2 class="text-2xl md:text-4xl text-blue-600 mb-8">Full Stack Developer & IT Support Analyst</h2>
+                <p class="text-xl mb-8 max-w-2xl">Building scalable software systems with expertise in modern web technologies and cloud services.</p>
+                <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-16 text-center">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative group">
+                    <img src="https://images.unsplash.com/photo-1623282033815-40b05d96c903?ixlib=rb-4.0.3" 
+                         alt="Profile" 
+                         class="rounded-lg shadow-xl transition transform group-hover:scale-105">
+                    <div class="absolute inset-0 bg-blue-600 bg-opacity-0 group-hover:bg-opacity-20 transition rounded-lg flex items-center justify-center">
+                        <div class="opacity-0 group-hover:opacity-100 transition text-white text-center p-4">
+                            <p class="text-lg font-semibold">4+ Years of Experience</p>
+                            <p>Full Stack Development & IT Support</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Professional Journey</h3>
+                    <div class="space-y-6">
+                        <div class="p-4 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+                            <h4 class="font-semibold">System Test Technician</h4>
+                            <p class="text-gray-600 dark:text-gray-300">ZT Systems, Secaucus, NJ</p>
+                            <p class="text-sm">Aug 2023 – Aug 2024</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-gray-700 rounded-lg shadow-md">
+                            <h4 class="font-semibold">Full Stack Developer</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Savvology Games, Mumbai, India</p>
+                            <p class="text-sm">Jan 2020 – Mar 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-16 text-center">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3" 
+                         alt="Learning Platform" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Personalized Learning Platform</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">AI-powered learning platform with adaptive course content</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded-full text-sm">MongoDB</span>
+                        </div>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">View Project →</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3" 
+                         alt="Art Platform" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Collaborative Art Platform</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Real-time collaborative digital canvas for artists</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded-full text-sm">Canvas API</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded-full text-sm">WebSocket</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded-full text-sm">AWS S3</span>
+                        </div>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">View Project →</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3" 
+                         alt="Job Platform" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">AI Job Recommendation System</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">ML-powered job matching platform</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded-full text-sm">TensorFlow</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded-full text-sm">Node.js</span>
+                        </div>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-16 text-center">Technical Skills</h2>
+            <div class="flex justify-center mb-8">
+                <div class="flex space-x-4">
+                    <button class="skill-filter px-4 py-2 rounded-full bg-blue-600 text-white" data-category="all">All</button>
+                    <button class="skill-filter px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700" data-category="frontend">Frontend</button>
+                    <button class="skill-filter px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700" data-category="backend">Backend</button>
+                    <button class="skill-filter px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700" data-category="tools">Tools</button>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="skill-item" data-category="frontend">
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                        <h3 class="text-lg font-semibold mb-4">Frontend Development</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>React/Angular</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded-full">
+                                    <div class="skill-bar h-full bg-blue-600 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>HTML/CSS</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded-full">
+                                    <div class="skill-bar h-full bg-blue-600 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more skill items here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-16 text-center">Get in Touch</h2>
+            <div class="max-w-2xl mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block mb-2">Name</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg border dark:bg-gray-700 dark:border-gray-600" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2">Email</label>
+                        <input type="email" class="w-full px-4 py-2 rounded-lg border dark:bg-gray-700 dark:border-gray-600" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2">Message</label>
+                        <textarea class="w-full px-4 py-2 rounded-lg border dark:bg-gray-700 dark:border-gray-600" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>
+                </form>
+                <div class="flex justify-center space-x-6 mt-12">
+                    <a href="https://linkedin.com" class="text-2xl hover:text-blue-600 transition">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://github.com" class="text-2xl hover:text-blue-600 transition">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="mailto:jashpatel1802@gmail.com" class="text-2xl hover:text-blue-600 transition">
+                        <i class="bi bi-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script>
+        // Loading Screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.loading-screen').style.opacity = '0';
+                setTimeout(() => {
+                    document.querySelector('.loading-screen').style.display = 'none';
+                }, 300);
+            }, 1000);
+        });
+
+        // Particles.js Configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80 },
+                color: { value: '#3b82f6' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#3b82f6',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 3
+                }
+            }
+        });
+
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            const icon = themeToggle.querySelector('i');
+            icon.classList.toggle('bi-moon-stars');
+            icon.classList.toggle('bi-sun');
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Skill Filtering
+        const skillFilters = document.querySelectorAll('.skill-filter');
+        const skillItems = document.querySelectorAll('.skill-item');
+
+        skillFilters.forEach(filter => {
+            filter.addEventListener('click', () => {
+                // Update active filter
+                skillFilters.forEach(f => f.classList.remove('bg-blue-600', 'text-white'));
+                filter.classList.add('bg-blue-600', 'text-white');
+
+                const category = filter.dataset.category;
+                skillItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Animate skill bars on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.width = entry.target.parentElement.dataset.value;
+                }
+            });
+        });
+
+        document.querySelectorAll('.skill-bar').forEach(bar => {
+            observer.observe(bar);
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
